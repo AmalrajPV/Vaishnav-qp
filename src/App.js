@@ -8,6 +8,7 @@ import Previous from "./Pages/Hod/Previous";
 import Viewcalander from "./Pages/Ec/Viewcalander";
 import Viewqp from "./Pages/Ec/Viewqp";
 import Viewissue from "./Pages/Ec/Viewissue";
+import Date from "./Pages/Ec/Date";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/viewcalander" Component={Viewcalander}/>
         <Route path="/viewquestionpaper" Component={Viewqp}/>
         <Route path="/viewissue" Component={Viewissue}/>
+        <Route path="/date" Component={Date}/>
 
       </Routes> 
     </Router>
