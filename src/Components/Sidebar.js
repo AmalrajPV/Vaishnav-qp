@@ -36,7 +36,7 @@ export const Sidebar = [
 
 export const sidebar = (user) =>{
     switch (user) {
-        case 'hod':
+        case 'head of department':
             return [
                 {
                     title: 'Exam',
@@ -65,7 +65,7 @@ export const sidebar = (user) =>{
 
 
             ]
-        case "ec":
+        case "exam controller":
             return [
                 {
                     title: 'View calander',
@@ -83,6 +83,21 @@ export const sidebar = (user) =>{
                     title: 'View issue',
                     path: '/viewissue',
                     icons: <IoIcons.IoIosPaper />,
+                    cName: 'nav-text'
+                },
+            ]
+            case 'level officer':
+            return [
+                {
+                    title: 'Add exam',
+                    path: '/addexam',
+                    icons: <BsIcons.BsFillPencilFill />,
+                    cName: 'nav-text'
+                },
+                {
+                    title: 'View calander',
+                    path: '/viewcalander',
+                    icons: <BsIcons.BsFillPencilFill />,
                     cName: 'nav-text'
                 },
             ]

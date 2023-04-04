@@ -9,7 +9,7 @@ function Navbar() {
     const [sidebar1,setSidebar] = useState(false)
 
     const showSidebar=()=>setSidebar(!sidebar1)
-    const user = 'ec';
+    const user = 'level officer';
   return (
     <div>
         <IconContext.Provider value={{color:'#fff'}}>
@@ -18,7 +18,7 @@ function Navbar() {
                     <FaIcons.FaBars onClick={showSidebar}/>
                 </Link>
                 <div className="head1">
-                    <h1 className='heading'>Head of department</h1>
+                    <h1 className='heading'>{user}</h1>
                 </div>
             </div>
             <nav className={sidebar1 ? 'nav-menu active' : 'nav-menu'}>

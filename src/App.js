@@ -9,6 +9,8 @@ import Viewcalander from "./Pages/Ec/Viewcalander";
 import Viewqp from "./Pages/Ec/Viewqp";
 import Viewissue from "./Pages/Ec/Viewissue";
 import Date from "./Pages/Ec/Date";
+import Addexam from "./Pages/Level-1/Addexam";
+import Searchadd from "./Pages/Level-1/Searchadd";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/viewquestionpaper" Component={Viewqp}/>
         <Route path="/viewissue" Component={Viewissue}/>
         <Route path="/date" Component={Date}/>
+        <Route path="/addexam" Component={Addexam}/>
+        <Route path="/searchadd" Component={Searchadd}/>
 
       </Routes> 
     </Router>
