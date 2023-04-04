@@ -1,0 +1,12 @@
+.report-issue{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+textarea{
+    width: 500px;
+    resize: none;
+}
+.report-btn{
+margin-top: 20px;
+}
