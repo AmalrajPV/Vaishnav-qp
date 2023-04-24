@@ -3,7 +3,7 @@ import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as BsIcons from "react-icons/bs";
 import * as ImIcons from "react-icons/im";
-
+import * as GrIcons from "react-icons/gr";
 
 export const Sidebar = [
     {
@@ -70,7 +70,7 @@ export const sidebar = (user) =>{
                 {
                     title: 'View calander',
                     path: '/viewcalander',
-                    icons: <BsIcons.BsFillPencilFill />,
+                    icons: <AiIcons.AiOutlineCalendar />,
                     cName: 'nav-text'
                 },
                 {
@@ -82,7 +82,7 @@ export const sidebar = (user) =>{
                 {
                     title: 'View issue',
                     path: '/viewissue',
-                    icons: <IoIcons.IoIosPaper />,
+                    icons: <AiIcons.AiOutlineIssuesClose />,
                     cName: 'nav-text'
                 },
             ]
@@ -91,13 +91,13 @@ export const sidebar = (user) =>{
                 {
                     title: 'Add exam',
                     path: '/addexam',
-                    icons: <BsIcons.BsFillPencilFill />,
+                    icons: <IoIcons.IoMdAddCircle />,
                     cName: 'nav-text'
                 },
                 {
                     title: 'View calander',
                     path: '/viewcalander',
-                    icons: <BsIcons.BsFillPencilFill />,
+                    icons: <AiIcons.AiOutlineCalendar />,
                     cName: 'nav-text'
                 },
             ]
