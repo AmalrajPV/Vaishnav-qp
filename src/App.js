@@ -14,13 +14,15 @@ import Searchadd from "./Pages/Level-1/Searchadd";
 import Eclogin from "./Pages/Logins/Eclogin"
 import Hodlogin from "./Pages/Logins/Hodlogin"
 import Levellogin from "./Pages/Logins/Levellogin"
+import Home from "./Pages/Logins/Home"
 function App() {
   return (
     <div className="App">
     <Router>
       <Navbar/>
       <Routes>
-        <Route exact path="/" Component={Eclogin} />
+        <Route exact path="/" Component={Home}/>
+        <Route path="/eclogin" Component={Eclogin} />
         <Route path="/hodlogin" Component={Hodlogin} />
         <Route path="/levellogin" Component={Levellogin}/>
         <Route path="/exam" Component={Exam}/>
