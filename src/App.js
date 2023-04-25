@@ -11,14 +11,19 @@ import Viewissue from "./Pages/Ec/Viewissue";
 import Date from "./Pages/Ec/Date";
 import Addexam from "./Pages/Level-1/Addexam";
 import Searchadd from "./Pages/Level-1/Searchadd";
-
+import Eclogin from "./Pages/Logins/Eclogin"
+import Hodlogin from "./Pages/Logins/Hodlogin"
+import Levellogin from "./Pages/Logins/Levellogin"
 function App() {
   return (
     <div className="App">
     <Router>
       <Navbar/>
       <Routes>
-        <Route exact path="/" Component={Exam}/>
+        <Route exact path="/" Component={Eclogin} />
+        <Route path="/hodlogin" Component={Hodlogin} />
+        <Route path="/levellogin" Component={Levellogin}/>
+        <Route path="/exam" Component={Exam}/>
         <Route path="/viewnotification" Component={Viewnotif}/>
         <Route path="/reportissue" Component={Report}/>
         <Route path="/pyq" Component={Previous}/>

@@ -3,12 +3,11 @@ import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as BsIcons from "react-icons/bs";
 import * as ImIcons from "react-icons/im";
-import * as GrIcons from "react-icons/gr";
 
 export const Sidebar = [
     {
         title: 'Exam',
-        path: '/',
+        path: '/exam',
         icons: <BsIcons.BsFillPencilFill />,
         cName: 'nav-text'
     },
@@ -40,16 +39,16 @@ export const sidebar = (user) =>{
             return [
                 {
                     title: 'Exam',
-                    path: '/',
+                    path: '/exam',
                     icons: <BsIcons.BsFillPencilFill />,
                     cName: 'nav-text'
                 },
-                {
-                    title: 'View Notification',
-                    path: '/viewnotification',
-                    icons: <IoIcons.IoIosPaper />,
-                    cName: 'nav-text'
-                },
+                // {
+                //     title: 'View Notification',
+                //     path: '/viewnotification',
+                //     icons: <IoIcons.IoIosPaper />,
+                //     cName: 'nav-text'
+                // },
                 {
                     title: 'Report Issue',
                     path: '/reportissue',

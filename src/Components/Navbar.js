@@ -9,7 +9,7 @@ function Navbar() {
     const [sidebar1,setSidebar] = useState(false)
 
     const showSidebar=()=>setSidebar(!sidebar1)
-    const user = 'level officer';
+    const user = 'exam controller';
   return (
     <div>
         <IconContext.Provider value={{color:'#fff'}}>
