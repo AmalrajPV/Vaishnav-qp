@@ -30,14 +30,14 @@
     line-height: 1.5rem;
     font-weight: bolder;
 }
-.btn1 a{
+.btn12 a{
     text-decoration: none;
     color: white;
     background-color: #1a83ff;
     border-radius: 0.25rem;
     padding: 0.5rem 2rem ;
 }
-.btn1{
+.btn12{
     padding: 1rem 2rem;
 }
 .no-exam{

@@ -2,7 +2,7 @@ import React from 'react'
 import img from '../../Assets/logo.png'
 import '../Logins/Login.css'
 
-function Hod() {
+function Login() {
     return (
         <div className="main">
             <div className="nav">
@@ -18,17 +18,19 @@ function Hod() {
                     <img src={img} alt="" className='logoimg' />
                 </div>
                 <div className="user">
-                    <div className="head">
-                        <h2 id='head'>Exam Controller</h2>
+                    <div className="head"> 
+                        <h2 id='head'>LOGIN</h2>
                     </div>
                 </div>
                 <div className="box">
                     <form>
                         <div className="input-row">
-                            <label htmlFor="hodid">Ec ID:</label><input type="text" id="hodid" name="hodid" />
+                            <label htmlFor="hodid">Username:</label>
+                            <input type="text" id="hodid" name="hodid" />
                         </div>
                         <div className="input-row">
-                            <label htmlFor="password">Password:</label><input type="password" id="password" name="password" />
+                            <label htmlFor="password">Password:</label>
+                            <input type="password" id="password" name="password" />
                         </div>
 
                         <div className="btn">
@@ -41,4 +43,4 @@ function Hod() {
     )
 }
 
-export default Hod
+export default Login

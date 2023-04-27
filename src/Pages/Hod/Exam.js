@@ -2,7 +2,7 @@ import React from 'react'
 import '../hod css/Exam.css'
 import img from '../../Assets/pdf.png'
 function Exam() {
-  const exams = []
+  const exams = [12]
   return (
     <div>
         <div className="content">
@@ -20,7 +20,7 @@ function Exam() {
                   </div>
                   <div className="pdf">
                     <img src={img} alt="" width='70px' />
-                     <div className="btn1">
+                     <div className="btn12">
                       <a href="#">Download</a>
                      </div>
                   </div>
