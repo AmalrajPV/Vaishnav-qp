@@ -48,3 +48,9 @@
     font-size: 23px;
     font-weight: bolder;
 }
+.searchadd-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding: 20px;
+}

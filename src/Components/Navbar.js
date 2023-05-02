@@ -8,8 +8,8 @@ import { IconContext } from 'react-icons';
 function Navbar() {
     const [sidebar1,setSidebar] = useState(false)
     const showSidebar=()=>setSidebar(!sidebar1)
-    const user = 'level officer';
-    const login = false
+    const user = 'head of department';
+    const login = true
   return (
     <div>   
         { login ? 
