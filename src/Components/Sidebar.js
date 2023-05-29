@@ -88,8 +88,26 @@ export const sidebar = (user) =>{
             case 'level officer':
             return [
                 {
-                    title: 'Add exam',
+                    title: 'Add Exam',
                     path: '/addexam',
+                    icons: <IoIcons.IoMdAddCircle />,
+                    cName: 'nav-text'
+                },
+                {
+                    title: 'Add Course',
+                    path: '/addcourse',
+                    icons: <IoIcons.IoMdAddCircle />,
+                    cName: 'nav-text'
+                },
+                {
+                    title: 'Add hod',
+                    path: '/addhod',
+                    icons: <IoIcons.IoMdAddCircle />,
+                    cName: 'nav-text'
+                },
+                {
+                    title: 'Add faculty',
+                    path: '/addfaculty',
                     icons: <IoIcons.IoMdAddCircle />,
                     cName: 'nav-text'
                 },
@@ -99,6 +117,21 @@ export const sidebar = (user) =>{
                     icons: <AiIcons.AiOutlineCalendar />,
                     cName: 'nav-text'
                 },
+                {
+                    title: 'View issue',
+                    path: '/viewissue',
+                    icons: <AiIcons.AiOutlineIssuesClose />,
+                    cName: 'nav-text'
+                }
+            ]
+            case "faculty":
+            return [
+                {
+                    title: 'View calander',
+                    path: '/viewcalander',
+                    icons: <AiIcons.AiOutlineCalendar />,
+                    cName: 'nav-text'
+                }
             ]
         default:
             return []

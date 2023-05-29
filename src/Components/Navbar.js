@@ -2,13 +2,13 @@ import React,{useState} from 'react'
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import {Link} from 'react-router-dom'
-import { Sidebar, sidebar } from './Sidebar';
+import {sidebar } from './Sidebar';
 import '../Components/Navbar.css';
 import { IconContext } from 'react-icons';
 function Navbar() {
     const [sidebar1,setSidebar] = useState(false)
     const showSidebar=()=>setSidebar(!sidebar1)
-    const user = 'head of department';
+    const user = 'faculty';
     const login = true
   return (
     <div>   
@@ -18,9 +18,9 @@ function Navbar() {
                     <Link to='#' className='menu-bars'>
                         <FaIcons.FaBars onClick={showSidebar}/>
                     </Link>
-                    {/* <div className="head1">
+                    <div className="head1">
                         <h1 className='heading'>{user}</h1>
-                    </div> */}
+                    </div>
                 </div>
                 <nav className={sidebar1 ? 'nav-menu active' : 'nav-menu'}>
                     <ul className="nav-menu-items" onClick={showSidebar}>

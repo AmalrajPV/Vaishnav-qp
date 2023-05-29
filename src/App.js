@@ -12,7 +12,9 @@ import Date from "./Pages/Ec/Date";
 import Addexam from "./Pages/Level-1/Addexam";
 import Searchadd from "./Pages/Level-1/Searchadd";
 import Login from "./Pages/Logins/Login"
-
+import AddFaculty from "./Pages/Level-1/AddFaculty";
+import AddHod from "./Pages/Level-1/AddHod";
+import AddCourse from "./Pages/Level-1/AddCourse";
 function App() {
   return (
     <div className="App">
@@ -30,6 +32,9 @@ function App() {
         <Route path="/date" Component={Date}/>
         <Route path="/addexam" Component={Addexam}/>
         <Route path="/searchadd" Component={Searchadd}/>
+        <Route path="/addfaculty" Component={AddFaculty}/>
+        <Route path="/addhod" Component={AddHod}/>
+        <Route path="/addcourse" Component={AddCourse}/>
       </Routes> 
     </Router>
     </div>
