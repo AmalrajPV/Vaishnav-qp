@@ -67,6 +67,12 @@ export const sidebar = (user) =>{
         case "exam controller":
             return [
                 {
+                    title: 'Add Level officer',
+                    path: '/addlevelofficer',
+                    icons: <IoIcons.IoMdAddCircle />,
+                    cName: 'nav-text'
+                },
+                {
                     title: 'View calander',
                     path: '/viewcalander',
                     icons: <AiIcons.AiOutlineCalendar />,
@@ -126,6 +132,12 @@ export const sidebar = (user) =>{
             ]
             case "faculty":
             return [
+                {
+                    title: 'add questions',
+                    path: '/Addquestion',
+                    icons: <AiIcons.AiOutlineCalendar />,
+                    cName: 'nav-text'
+                },
                 {
                     title: 'View calander',
                     path: '/viewcalander',

@@ -8,42 +8,48 @@ function Addexam() {
   ]
   return (
     <div className='addexam-main'>
-      <div className="title">Add exam</div>
-      <div className="form">
-        <div className="fields">
-          <p>UG/PG:</p>
-          <Select options={course} className='select-box' />
-        </div>
-        <div className="fields">
-          <p>Branch:</p>
-          <Select className='select-box'/>
-        </div>
-        <div className="fields">
-          <p>Semester:</p>
-          <Select className='select-box'/>
-        </div>
-        <div className="fields">
-          <p>Subject:</p>
-          <Select className='select-box'/>
-        </div>
-        <div className="fields">
-          <p>Start time:</p>
-          <input type="time" name="" id=""  className='select-box' />
-        </div>
-        <div className="fields">
-          <p>End time:</p>
-          <input type="time" name="" id="" className='select-box' />
-        </div>
-        <div className="fields">
-          <p>Duration:</p>
-          <input type="text" name="" id="" className='select-box' disabled />
-        </div>
-        <div className="fields">
-          <button className='logout report-btn'>Add</button>
-        </div>
-      </div>
+      <div className="title">ADD EXAM</div>
+        <form action="" method="post">
+            <table>
+              <tr>
+                <td>UG/PG</td>
+                <td><Select options={course} className='hod-select-box' /></td>
+              </tr>
+              <tr>
+                <td>Department</td>
+                <td><Select className='hod-select-box'/></td>
+              </tr>
+              <tr>
+                <td>Branch</td>
+                <td><Select className='hod-select-box'/></td>
+              </tr>
+              <tr>
+                <td>Semester</td>
+                <td><Select className='hod-select-box'/></td>
+              </tr>
+              <tr>
+                <td>Subject</td>
+                <td><Select className='hod-select-box'/></td>
+              </tr>
+              <tr>
+                <td>Start time</td>
+                <td><input type="time" name="" id=""  className='hod-select-box' /></td>
+              </tr>
+              <tr>
+                <td>End time</td>
+                <td><input type="time" name="" id=""  className='hod-select-box' /></td>
+              </tr>
+              <tr>
+                <td>Duration</td>
+                <td><input type="text" name="" id="" className='hod-select-box' disabled /></td>
+              </tr>
+            </table>
+            <div className="fields">
+              <button className='logout report-btn'>Add</button>
+            </div>    
+        </form>
     </div>
   )
 }
-
 export default Addexam
+

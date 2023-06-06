@@ -15,6 +15,9 @@ import Login from "./Pages/Logins/Login"
 import AddFaculty from "./Pages/Level-1/AddFaculty";
 import AddHod from "./Pages/Level-1/AddHod";
 import AddCourse from "./Pages/Level-1/AddCourse";
+import Addquestion from "./Pages/Faculty/Addquestion";
+import Addque from "./Pages/Faculty/Addque";
+import Addlevelofficer from "./Pages/Ec/Addlevelofficer";
 function App() {
   return (
     <div className="App">
@@ -35,6 +38,9 @@ function App() {
         <Route path="/addfaculty" Component={AddFaculty}/>
         <Route path="/addhod" Component={AddHod}/>
         <Route path="/addcourse" Component={AddCourse}/>
+        <Route path="/Addquestion" Component={Addquestion}/>
+        <Route path="/addque" Component={Addque}/>
+        <Route path="/addlevelofficer" Component={Addlevelofficer}/>
       </Routes> 
     </Router>
     </div>

@@ -8,15 +8,53 @@ const course = [
 function AddHod() {
   return (
     <div className='addexam-main'>
-      <div className="title">Add Head of Department</div>
-      <div className="form">
+      <div className="title">ADD  HOD</div>
+        <form action="" method="post">
+          <table>
+              <tr>
+                <td>UG/PG </td>
+                <td><Select options={course} className='hod-select-box' /></td>
+              </tr>
+              <tr>
+                <td>Name </td>
+                <td><input type="text" style={{fontSize:'16px'}} name="" id="" className='hod-select-box' /></td>
+              </tr>
+              <tr>
+                <td>College Name</td>
+                <td><input type="text" style={{fontSize:'16px'}} name="" id="" className='hod-select-box' /></td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td><input type="email" style={{fontSize:'16px'}} name="" id=""  className='hod-select-box'/></td>
+              </tr>
+              <tr>
+                <td>Phone</td>
+                <td><input type="tel" style={{fontSize:'16px'}} name="" id=""  className='hod-select-box' /></td>
+              </tr>
+              <tr>
+                <td>Department</td>
+                <td><Select className='hod-select-box'  /></td>
+              </tr>
+          </table>
+          <div className="fields">
+            <button className='logout report-btn'>ADD HOD</button>
+          </div>
+        </form>
+    </div>
+  )
+}
+
+export default AddHod
+
+//////////////////////////
+{/* <div className="form">
         <div className="fields">
           <p>UG/PG:</p>
-          <Select options={course} className='hod-select-box' />
+          
         </div>
         <div className="fields">
           <p>Name:</p>
-          <input type="text" style={{fontSize:'16px'}} name="" id="" className='hod-select-box' />
+          
         </div>
         <div className="fields">
           <p>College Name:</p>
@@ -34,12 +72,5 @@ function AddHod() {
           <p>Department:</p>
           <Select className='hod-select-box'  />
         </div>
-        <div className="fields">
-          <button className='logout report-btn'>Add HOD</button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default AddHod
+        
+      </div> */}
