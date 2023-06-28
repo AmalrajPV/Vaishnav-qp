@@ -35,7 +35,7 @@ export const Sidebar = [
 
 export const sidebar = (user) =>{
     switch (user) {
-        case 'head of department':
+        case 'hod':
             return [
                 {
                     title: 'Exam',
@@ -64,7 +64,7 @@ export const sidebar = (user) =>{
 
 
             ]
-        case "exam controller":
+        case "exam-controller":
             return [
                 {
                     title: 'Add Level officer',
@@ -91,7 +91,7 @@ export const sidebar = (user) =>{
                     cName: 'nav-text'
                 },
             ]
-            case 'level officer':
+            case 'level-officer':
             return [
                 {
                     title: 'Add Exam',
@@ -100,7 +100,7 @@ export const sidebar = (user) =>{
                     cName: 'nav-text'
                 },
                 {
-                    title: 'Add Course',
+                    title: 'Add subject',
                     path: '/addcourse',
                     icons: <IoIcons.IoMdAddCircle />,
                     cName: 'nav-text'

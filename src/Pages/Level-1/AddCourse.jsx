@@ -1,71 +1,182 @@
-import React from 'react'
-import Select from 'react-select';
-import '../Level-1 css/Addexam.css';
-import axios from 'axios'
-import { useState } from 'react';
+import React, { useEffect } from "react";
+import Select from "react-select";
+import "../Level-1 css/Addexam.css";
+import axios from "axios";
+import { useState } from "react";
 function AddCourse() {
-  const course = [
-    { value: 1, label: "UG" },
-    { value: 2, label: "PG" }
-  ]
-  const [post, setPost] = useState({
-    coursetype: '',
-    department: '',
-    branch: '',
-    semester: '',
-    subject: '',
-  })
-  const handleChange = (e) => {
+  const [formData, setFormData] = useState({
+    department_id: "",
+    course_id: "",
+    semester: "",
+    subject_name: "",
+  });
+  const [departments, setDepartments] = useState([]);
+  const [courses, setCourses] = useState([]);
+  const semesters = [1, 2, 3, 4];
 
-    setPost({ ...post, [e.target.id]: e.target.value })
-  }
+  useEffect(() => {
+    fetch("http://127.0.0.1:5000/api/departments")
+      .then((response) => response.json())
+      .then((data) => {
+        // Set the department options in the state
+        setDepartments(data);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (formData.department_id) {
+      fetch(
+        `http://127.0.0.1:5000/api/departments/${formData.department_id}/courses`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setCourses(data);
+          setFormData({
+            ...formData,
+            course_id: "",
+            subject_id: "",
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, [formData.department_id]);
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSelectChange = (selectedOption, fieldName) => {
+    setFormData({
+      ...formData,
+      [fieldName]: selectedOption.value,
+    });
+  };
+
   const handleSubmit = (e) => {
-    e.preventDefault()
-    axios.post('https://jsonplaceholder.typicode.com/posts', { post })
-      .then(response => console.log(response))
-      .catch(err => console.log(err))
-  }
+    console.log(formData);
+    e.preventDefault();
+    fetch("http://127.0.0.1:5000/api/subject", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((data) => {
+        console.log(data);
+        if (data.ok) {
+          alert("Subject created successfully..!");
+          setFormData({
+            department_id: "",
+            course_id: "",
+            semester: "",
+            subject_name: "",
+          });
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div>
-      <div className='addexam-main'>
-        <div className="title">ADD COURSE</div>
+      <div className="addexam-main">
+        <div className="title">ADD SUBJECT</div>
         <form action="" method="post" onSubmit={handleSubmit}>
           <table>
             <tr>
-              <td>UG/PG :</td>
+              <td>Department</td>
               <td>
-                {/* <Select options={course}  className='hod-select-box' id='coursetype' onChange={handleChange}/> */}
-                <select value={post.coursetype} id='coursetype' onChange={handleChange}>
-                  {course.map((option) => (
-                    <option value={option.label}>{option.label}</option>
-                  ))}
-                </select>
+                <Select
+                  className="hod-select-box"
+                  value={departments.find((val) => {
+                    if (val.department_id === formData.department_id) {
+                      return;
+                    }
+                  })}
+                  onChange={(selectedOption) =>
+                    handleSelectChange(selectedOption, "department_id")
+                  }
+                  options={departments.map((department) => ({
+                    value: department.department_id,
+                    label: department.department_name,
+                  }))}
+                />
               </td>
             </tr>
             <tr>
-              <td>Department :</td>
-              <td><Select className='hod-select-box' id='department' onChange={handleChange} /></td>
+              <td>Course</td>
+              <td>
+                <Select
+                  className="hod-select-box"
+                  value={departments.find((val) => {
+                    if (val.course_id === formData.course_id) {
+                      return;
+                    }
+                  })}
+                  onChange={(selectedOption) =>
+                    handleSelectChange(selectedOption, "course_id")
+                  }
+                  options={courses.map((course) => ({
+                    value: course.course_id,
+                    label: course.course_name,
+                  }))}
+                />
+              </td>
             </tr>
-            <tr>
+
+            {/* <tr>
               <td>Branch :</td>
               <td><Select className='hod-select-box' id='branch' onChange={handleChange} /></td>
-            </tr>
+            </tr> */}
             <tr>
               <td>Semester :</td>
-              <td><Select className='hod-select-box' id='semester' onChange={handleChange} /></td>
+              <td>
+                <Select
+                  className="hod-select-box"
+                  name="semester"
+                  onChange={(selectedOption) =>
+                    handleSelectChange(selectedOption, "semester")
+                  }
+                  options={semesters.map((semester) => ({
+                    value: semester,
+                    label: semester,
+                  }))}
+                />
+              </td>
             </tr>
             <tr>
-              <td>Subject :</td>
-              <td><input type="text" style={{ fontSize: '16px' }} name="" id="subject" className='hod-select-box' onChange={handleChange} /></td>
+              <td>Subject Name :</td>
+              <td>
+                <input
+                  type="text"
+                  style={{ fontSize: "16px" }}
+                  value={formData.course_name}
+                  name="subject_name"
+                  id="subject"
+                  className="hod-select-box"
+                  onChange={handleInputChange}
+                />
+              </td>
             </tr>
           </table>
           <div className="fields">
-            <button className='logout report-btn'>ADD COURSE</button>
+            <button className="logout report-btn">ADD COURSE</button>
           </div>
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default AddCourse
+export default AddCourse;
