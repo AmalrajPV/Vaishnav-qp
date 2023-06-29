@@ -14,7 +14,6 @@ function ViewCalendar() {
       .then(response => response.json())
       .then(data => {
         setExams(data);
-
         // Create an array of dates from the exams data
         const dates = data.map(exam => {
           const examDate = new Date(exam.date_and_time);
